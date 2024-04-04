@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        body {
+            background-image: linear-gradient(135deg, #FFCF71 10%, #2376DD 100%);
+            min-height: 100vh;
+        }
+
+        .app-title {
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            background-color: #fff;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sun-img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn-toggle {
+            font-size: 25px;
+            padding: 5px 20px;
+            border-radius: 40px;
+            border: none;
+            margin: 0 20px;
+            cursor: pointer;
+            color: white;
+        }
+
+
+        .btn-yellow {
+            background-color: #f5f175b2;
+        }
+
+        .btn-grey {
+            background-color: rgba(128, 128, 128, 0.737);
+        }
+
+
+        .btn-toggle:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width:600px) {
+            .container {
+                width: 80%;
+            }
+
+            .sun-img {
+                height: 200px;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <i>
+        <h1 class="app-title">Weather Toggler</h1>
+    </i>
+
+    <div class="container">
+        <img src="sun.png" class="sun-img" id="img" />
+    </div>
+
+    <div class="btn-container">
+        <button type="button" class="btn-toggle btn-yellow" onclick="img_sun()">Sun</button>
+        <button type="button" class="btn-toggle btn-grey" onclick="img_rain()">Rain</button>
+    </div>
+
+    <script>
+        function img_sun() {
+            const imgElement = document.getElementById('img');
+            imgElement.src = 'sun.png';
+
+        }
+
+        function img_rain() {
+            const imgElement = document.getElementById('img');
+            imgElement.src = 'storm.png';
+        }
+    </script>
+</body>
+
+</html>
